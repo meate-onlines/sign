@@ -10,7 +10,7 @@ class SignProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/config/signer.php' => config_path('signer.php'),
+            __DIR__ . '/config/signer.php' =>  $this->app->configPath('signer.php'),
         ]);
     }
 }
