@@ -2,6 +2,13 @@
     "name": "bastphp/sign",
     "description": "sign,verify",
     "type": "library",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bastphp\\Sign\\SignProvider"
+            ]
+        }
+    },
     "require": {
         "illuminate/support": ">=7.0",
         "ext-json": " ^1.6"
