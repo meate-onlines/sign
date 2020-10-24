@@ -3,7 +3,7 @@
     "description": "sign,verify",
     "type": "library",
     "require": {
-        "illuminate/support": "7.2.2",
+        "illuminate/support": "7.x-dev",
         "ext-json": "^1.6"
     },
     "license": "MIT",
