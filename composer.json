@@ -10,7 +10,7 @@
         }
     },
     "require": {
-        "illuminate/support": ">=7.0",
+        "illuminate/support": ">=5.0",
         "ext-json": " ^1.6"
     },
     "license": "MIT",

@@ -6,9 +6,14 @@ namespace Bastphp\Sign;
 
 class BaseSign
 {
-    protected $sign_content;
-    public function setSignContent(array $content)
+    protected $app_id;
+    protected $key;
+
+    public function getSignContent(array $content)
     {
+        if (!isset($content['app_id'])){
+            $content['app_id'] = $this->app_id;
+        }
         ksort($content);
         $array = [];
         foreach ($content as $key => $item) {
@@ -17,7 +22,18 @@ class BaseSign
             }
             $array[] = $key . '=' . $item;
         }
-        $this->sign_content = implode('&', $array);
+        return implode('&', $array);
+    }
+
+    public function setAppId($app_id)
+    {
+        $this->app_id = $app_id;
+        return $this;
+    }
+
+    public function setKey($key)
+    {
+        $this->key = $key;
         return $this;
     }
 }

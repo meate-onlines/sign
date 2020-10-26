@@ -11,7 +11,7 @@ class SignClient
     ];
     public static function client($way = 'md5')
     {
-       return new self::$drive_array[$way];
+       return new self::$drive_array[$way](config("signer.$way"));
     }
 
 

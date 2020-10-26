@@ -10,14 +10,23 @@ use Bastphp\Sign\Signer;
 class Md5 extends BaseSign implements Signer
 {
     protected $sign_content;
-    public function encode(): string
+    protected $app_id;
+    protected $key;
+
+    public function __construct($options)
     {
-        $sign_str = $this->sign_content . "&app_id=" . config('signer.md5.app_id') . "&key=" . config('signer.md5.secret_key');
+       $this->app_id = $options['app_id'];
+       $this->key    = $options['key'];
+    }
+
+    public function encode(array $content): string
+    {
+        $sign_str = $this->getSignContent($content) . "&key=" . $this->key;
         return md5($sign_str);
     }
 
-    public function verify($sign): bool
+    public function verify(array $content, string $sign): bool
     {
-        return $this->encode() === $sign;
+        return $this->encode($content) === $sign;
     }
 }
