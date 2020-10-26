@@ -1,3 +1,4 @@
+
 ###Require
 
 illuminate/support >= 5.0
@@ -16,7 +17,8 @@ LARAVEL框架
 $app->configure('signer');
 然后在运行php artisan vendor:publish --provider=Bastphp\Sign\SignProvider 
 
-'''<?php
+``` 
+<?php
 
 
 namespace App\Http\Controllers;
@@ -38,7 +40,8 @@ class TestController extends Controller
        var_dump($res);
     }
 
-}'''
+}
+``` 
 
 ###Waring
 
