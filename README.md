@@ -46,3 +46,5 @@ class TestController extends Controller
 ###Waring
 
 请求时要把app_id加入到请求体中.
+
+如果不指定APPID和key会使用设置里面默认配置的
